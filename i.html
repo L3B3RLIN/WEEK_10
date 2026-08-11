@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Website</title>
+</head>
+
+<body>
+
+    <h1>My Profile</h1>
+
+    <button onclick="getData()">Get My Data</button>
+
+    <p id="result"></p>
+
+    <script>
+
+        function getData() {
+
+            fetch("api.php")
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+
+                    document.getElementById("result").innerHTML =
+                        data.name + "<br>" + data.email;
+
+                });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
